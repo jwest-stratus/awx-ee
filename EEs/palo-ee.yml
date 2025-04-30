@@ -29,7 +29,7 @@ dependencies:
       - name: ansible.windows
       - name: redhatinsights.insights
       - name: kubevirt.core
-      - name: community.vmware
+      - name: paloaltonetworks.panos
   system: |
     git-core [platform:rpm]
     python3.11-devel [platform:rpm compile]
@@ -63,9 +63,8 @@ dependencies:
     pyyaml
     six
     receptorctl
-    git+https://github.com/vmware/vsphere-automation-sdk-python.git
-    setuptools
-    pyVmomi
+    pan-python
+    pan-os-python 
 additional_build_steps:
   append_base:
     - RUN $PYCMD -m pip install -U pip
